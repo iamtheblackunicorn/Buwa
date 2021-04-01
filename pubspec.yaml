@@ -18,6 +18,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   fonts:
-    - family: TrainOne
+    - family: Lobster
       fonts:
-        - asset: assets/fonts/TrainOne.ttf
+        - asset: assets/fonts/Lobster.ttf
