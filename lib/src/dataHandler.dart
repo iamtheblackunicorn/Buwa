@@ -1,7 +1,5 @@
+import 'constants.dart';
 import 'package:dio/dio.dart';
-
-String wallpapersAPI = 'https://blckunicorn.art/assets/unicornlauncher/api/wallpapers.json';
-Dio dio = new Dio();
 
 class APIStorage {
   Future<Map<String, dynamic>> get _localFile async {

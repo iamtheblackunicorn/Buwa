@@ -12,9 +12,16 @@
 I've always wanted to write an app that had sexy and elegant wallpapers, so this is it. In my opinion most other apps have pretty
 boring very unsexy wallpapers.
 
+## Features :test_tube:
+
+- sexy and aesthetically-pleasing wallpapers
+- super fast performance
+- easy to use
+- new wallpapers are added every week
+
 ## Download :inbox_tray:
 
-- *Dark Angel* (v.1.0.0): Still work in progress.
+- *Dark Angel* (v.1.0.0): [Download](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (18.2 MB)
 
 ## Building :hammer:
 

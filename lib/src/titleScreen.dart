@@ -27,7 +27,6 @@ class HomeState extends State<Home> {
         }
         else {
           if (snapshot.hasError) {
-            print(snapshot.error);
             return ErrorScreen();
           }
           else {

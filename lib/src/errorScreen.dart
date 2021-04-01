@@ -1,28 +1,50 @@
+import 'constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class ErrorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context){
+    String errorMessage = AppLocalizations.of(context).errorLabel;
     return  Scaffold(
-      backgroundColor: Color(0xFF000000),
+      appBar: new AppBar(
+        title: new Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            new Text(
+              '$errorMessage',
+              style: TextStyle(
+                color: accentColor,
+                fontSize: textFontSize,
+                fontFamily: defaultFont
+              ),
+            ),
+          ]
+        ),
+        elevation: stdElevation,
+        backgroundColor: mainColor,
+      ),
+      backgroundColor: mainColor,
       body: Center(
         child: Column(
           children: <Widget> [
             new SizedBox(
-              height: 250
+              height: animationSpacing
             ),
             new Icon(
               Icons.warning,
-              color: Color(0xFF6600FF),
-              size: 150,
+              color: accentColor,
+              size: animationSize,
             ),
             new Text(
-              'Error!',
+              '$errorMessage',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Color(0xFF6600FF),
+                color: accentColor,
                 fontWeight: FontWeight.bold,
-                fontSize: 30,
+                fontSize: textFontSize,
+                fontFamily: defaultFont
               ),
             )
           ]

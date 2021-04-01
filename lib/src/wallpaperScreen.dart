@@ -1,11 +1,14 @@
+import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpaper_manager/wallpaper_manager.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class WallPaperScreen extends StatefulWidget{
   final String imageUrl;
   final String imageNumber;
-  WallPaperScreen({Key key, @required this.imageUrl, , @required this.imageNumber}) : super(key: key);
+  WallPaperScreen({Key key, @required this.imageUrl, @required this.imageNumber}) : super(key: key);
   @override
   WallPaperScreenState createState() => WallPaperScreenState();
 }
@@ -17,36 +20,48 @@ class WallPaperScreenState extends State<WallPaperScreen>{
     super.initState();
     pictureUrl = widget.imageUrl;
     pictureNumber = widget.imageNumber;
-    isSet = 'Set Wallpaper';
+    isSet = 'Set wallpaper!';
   }
   @override
   Widget build(BuildContext context){
+    String wallpaperMessage = AppLocalizations.of(context).wallpaperLabel;
+    String setMessage = AppLocalizations.of(context).isSetLabel;
     return Scaffold(
-      backgroundColor: Color(0xFF000000),
+      appBar: new AppBar(
+        centerTitle: true,
+        title: new Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            new Padding(
+              padding: EdgeInsets.all(stdPadding),
+              child:new Text(
+                '$wallpaperMessage $pictureNumber',
+                style: TextStyle(
+                  color: accentColor,
+                  fontSize: textFontSize,
+                  fontFamily: defaultFont
+                ),
+              ),
+            )
+          ]
+        ),
+        elevation: stdElevation,
+        backgroundColor: mainColor,
+      ),
+      backgroundColor: mainColor,
       body: new Center(
         child: new Column(
           children: <Widget> [
             new SizedBox(
-              height: 80
+              height: specialSpacing
             ),
             new Padding(
-              padding: EdgeInsets.all(20),
-              child: new Text(
-                'Wallpaper $pictureNumber',
-                textAlign: TextAlign.center,
-                textStyle: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xFFFFFFFF)
-                )
-              )
-            ),
-            new Padding(
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(specialPadding),
               child: new SizedBox(
-                height: 500,
-                width: 300,
+                height: pictureBoxHeight,
+                width: pictureBoxWidth,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(stdRounding),
                   child: Image.network(
                     '$pictureUrl',
                     width: double.infinity,
@@ -56,7 +71,7 @@ class WallPaperScreenState extends State<WallPaperScreen>{
               )
             ),
             new SizedBox(
-              height: 50
+              height: boxSpacing
             ),
             new ElevatedButton(
               child: Text(
@@ -72,18 +87,19 @@ class WallPaperScreenState extends State<WallPaperScreen>{
                 resultOne = await WallpaperManager.setWallpaperFromFile(file.path, homeLocation);
                 resultTwo = await WallpaperManager.setWallpaperFromFile(file.path, lockLocation);
                 setState((){
-                  isSet = 'Set!';
+                  isSet = '$setMessage';
                 });
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25)
+                  borderRadius: BorderRadius.circular(stdRounding)
                 ),
-                primary: Color(0xFF6600FF),
-                padding: EdgeInsets.symmetric(vertical: 6, horizontal: 60),
+                primary: accentColor,
+                padding: EdgeInsets.symmetric(vertical: verticalPadding, horizontal: horizontalPadding),
                 textStyle: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xFFFFFFFF)
+                  fontSize: textFontSize,
+                  color: mainColor,
+                  fontFamily: defaultFont
                 )
               ),
             ),
