@@ -8,7 +8,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 class WallPaperScreen extends StatefulWidget{
   final String imageUrl;
   final String imageNumber;
-  WallPaperScreen({Key key, @required this.imageUrl, @required this.imageNumber}) : super(key: key);
+  final String imageTitle;
+  WallPaperScreen({Key key, @required this.imageUrl, @required this.imageNumber, @required this.imageTitle}) : super(key: key);
   @override
   WallPaperScreenState createState() => WallPaperScreenState();
 }
@@ -16,16 +17,22 @@ class WallPaperScreenState extends State<WallPaperScreen>{
   String pictureUrl;
   String pictureNumber;
   String isSet;
+  String pictureTitle;
   void initState(){
     super.initState();
     pictureUrl = widget.imageUrl;
     pictureNumber = widget.imageNumber;
-    isSet = 'Set wallpaper!';
+    pictureTitle = widget.imageTitle;
+    isSet = 'Initialize me!';
   }
   @override
   Widget build(BuildContext context){
     String wallpaperMessage = AppLocalizations.of(context).wallpaperLabel;
     String setMessage = AppLocalizations.of(context).isSetLabel;
+    String setterMessage = AppLocalizations.of(context).setMeLabel;
+    setState((){
+      isSet = setterMessage;
+    });
     return Scaffold(
       appBar: new AppBar(
         centerTitle: true,
@@ -62,11 +69,33 @@ class WallPaperScreenState extends State<WallPaperScreen>{
                 width: pictureBoxWidth,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(stdRounding),
-                  child: Image.network(
-                    '$pictureUrl',
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
+                  child: new Stack(
+                    children: <Widget> [
+                      new Image.network(
+                        '$pictureUrl',
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
+                      new Positioned(
+                        bottom: 0.2,
+                        left: 0.2,
+                        child: Align(
+                          alignment: Alignment(-0.8, 0.8),
+                          child: Padding(
+                            padding: EdgeInsets.all(stdPadding),
+                            child: Text(
+                              '$pictureTitle',
+                              style: TextStyle(
+                                color: mainColor,
+                                fontSize: textFontSize,
+                                fontFamily: defaultFont
+                              ),
+                            )
+                          )
+                        )
+                      )
+                    ]
+                  )
                 )
               )
             ),

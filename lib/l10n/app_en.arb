@@ -2,5 +2,6 @@
   "isSetLabel": "Set!",
   "errorLabel": "Error!",
   "loadingLabel": "Loading...",
-  "wallpaperLabel": "Walpaper"
+  "wallpaperLabel": "Wallpaper",
+  "setMeLabel": "Set Wallpaper"
 }

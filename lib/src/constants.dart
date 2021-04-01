@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-String wallpapersAPI = 'https://blckunicorn.art/assets/unicornlauncher/api/wallpapers.json';
+String wallpapersAPI = 'https://blckunicorn.art/assets/buwa/api/wallpapers.json';
 Dio dio = new Dio();
 Color mainColor = Color(0xFFFFFFFF);
 Color accentColor = Color(0xFF000000);

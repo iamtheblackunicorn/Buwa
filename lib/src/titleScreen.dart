@@ -34,8 +34,9 @@ class HomeState extends State<Home> {
             List<Widget> screens = [];
             for (int i = 0; i < remoteWallpapers.length; i++){
               String key = remoteWallpapers.keys.elementAt(i);
-              String url = remoteWallpapers[key];
-              screens.add(WallPaperScreen(imageUrl: url, imageNumber: key));
+              String url = remoteWallpapers[key][0];
+              String title = remoteWallpapers[key][1];
+              screens.add(WallPaperScreen(imageUrl: url, imageNumber: key, imageTitle: title));
             }
             return PageView(
               controller: pageController,
