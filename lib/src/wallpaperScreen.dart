@@ -18,21 +18,21 @@ class WallPaperScreenState extends State<WallPaperScreen>{
   String pictureNumber;
   String isSet;
   String pictureTitle;
+  String isInstalled;
   void initState(){
     super.initState();
     pictureUrl = widget.imageUrl;
     pictureNumber = widget.imageNumber;
     pictureTitle = widget.imageTitle;
-    isSet = 'Initialize me!';
+    isSet = setWallpaperMessage;
+    isInstalled = notInstalledMessage;
   }
   @override
   Widget build(BuildContext context){
     String wallpaperMessage = AppLocalizations.of(context).wallpaperLabel;
     String setMessage = AppLocalizations.of(context).isSetLabel;
-    String setterMessage = AppLocalizations.of(context).setMeLabel;
-    setState((){
-      isSet = setterMessage;
-    });
+    String waitMessage = AppLocalizations.of(context).waitLabel;
+    String doneMessage = AppLocalizations.of(context).doneLabel;
     return Scaffold(
       appBar: new AppBar(
         centerTitle: true,
@@ -67,31 +67,51 @@ class WallPaperScreenState extends State<WallPaperScreen>{
               child: new SizedBox(
                 height: pictureBoxHeight,
                 width: pictureBoxWidth,
-                child: ClipRRect(
+                child: new ClipRRect(
                   borderRadius: BorderRadius.circular(stdRounding),
-                  child: new Stack(
+                  child: Image.network(
+                    '$pictureUrl',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                )
+              )
+            ),
+            new Padding(
+              padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+              child:new Card(
+                color: accentColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(specialRounding)
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(stdPadding),
+                  child: new Column(
                     children: <Widget> [
-                      new Image.network(
-                        '$pictureUrl',
-                        width: double.infinity,
-                        fit: BoxFit.cover,
+                      new Text(
+                        '$pictureTitle',
+                        textAlign: TextAlign.left,
+                        style: new TextStyle(
+                          color: mainColor,
+                          fontSize: textFontSize,
+                          fontFamily: defaultFont
+                        )
                       ),
-                      new Positioned(
-                        bottom: 0.2,
-                        left: 0.2,
-                        child: Align(
-                          alignment: Alignment(-0.8, 0.8),
-                          child: Padding(
-                            padding: EdgeInsets.all(stdPadding),
-                            child: Text(
-                              '$pictureTitle',
-                              style: TextStyle(
-                                color: mainColor,
-                                fontSize: textFontSize,
-                                fontFamily: defaultFont
-                              ),
-                            )
-                          )
+                      new Padding(
+                        padding: EdgeInsets.all(specialPaddingTwo),
+                        child: new Divider(
+                          height: dividerHeight,
+                          thickness: dividerHeight,
+                          color: mainColor
+                        )
+                      ),
+                      new Text(
+                        '$isInstalled',
+                        textAlign: TextAlign.left,
+                        style: new TextStyle(
+                          color: mainColor,
+                          fontSize: textFontSize,
+                          fontFamily: defaultFont
                         )
                       )
                     ]
@@ -107,6 +127,9 @@ class WallPaperScreenState extends State<WallPaperScreen>{
                 '$isSet'
               ),
               onPressed: () async {
+                setState((){
+                  isInstalled = '$waitMessage';
+                });
                 String url = '$pictureUrl';
                 int homeLocation = WallpaperManager.HOME_SCREEN;
                 int lockLocation = WallpaperManager.LOCK_SCREEN;
@@ -117,6 +140,9 @@ class WallPaperScreenState extends State<WallPaperScreen>{
                 resultTwo = await WallpaperManager.setWallpaperFromFile(file.path, lockLocation);
                 setState((){
                   isSet = '$setMessage';
+                });
+                setState((){
+                  isInstalled = '$doneMessage';
                 });
               },
               style: ElevatedButton.styleFrom(

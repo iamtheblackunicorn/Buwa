@@ -3,5 +3,6 @@
   "errorLabel": "Error!",
   "loadingLabel": "Loading...",
   "wallpaperLabel": "Wallpaper",
-  "setMeLabel": "Set Wallpaper"
+  "waitLabel": "Please wait...",
+  "doneLabel": "Done."
 }

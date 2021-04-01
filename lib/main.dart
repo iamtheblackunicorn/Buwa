@@ -17,7 +17,9 @@ void main() {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        const Locale('en', '')
+        const Locale('en', ''),
+        const Locale('de', ''),
+        const Locale('es', '')
       ],
     )
   );

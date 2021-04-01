@@ -18,10 +18,13 @@ boring very unsexy wallpapers.
 - super fast performance
 - easy to use
 - new wallpapers are added every week
+- localized for German, English, and Spanish
+- elegant and minimalist design
 
 ## Download :inbox_tray:
 
 - *Dark Angel* (v.1.0.0): [Download](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (17.6 MB)
+- *Elegance Noir* (v.1.1.0): [Download](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.1.0/Buwa-v1.1.0-EleganceNoir-Release.apk) (17.6 MB)
 
 ## Building :hammer:
 
@@ -55,7 +58,7 @@ You have now generated a release build of *Black Unicorn Wallpapers*.
 
 ## Extending the supported languages :book:
 
-*Black Unicorn Wallpapers* is localized for only English. To add a language, simply create a filed called `app_languagecode.arb` in `lib/l10n` where `languagecode` represents the language code for the language you want to add. If it were Spanish for example, you would create a file called `app_es.arb`.
+*Black Unicorn Wallpapers* is localized for German, English, and Spanish. To add a language, simply create a file called `app_languagecode.arb` in `lib/l10n` where `languagecode` represents the language code for the language you want to add. If it were Spanish for example, you would create a file called `app_es.arb`.
 Copy and past the contents from one of the other `*.arb` files and edit the strings accordingly.
 Finally, add this line in the list `supportedLocales` in the file `lib/main.dart`.
 
@@ -72,6 +75,13 @@ const Locale('languagecode', ''),
 - upload to GitHub
 - initial release
 - speed and elegance
+
+### Version 1.1.0: The Elegance Update:
+
+- added an image title to each wallpaper
+- localized the app for Spanish, English, and German
+- fixed typos
+- improved layout
 
 ## Note :scroll:
 
