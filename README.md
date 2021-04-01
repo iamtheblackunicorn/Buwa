@@ -21,7 +21,7 @@ boring very unsexy wallpapers.
 
 ## Download :inbox_tray:
 
-- *Dark Angel* (v.1.0.0): [Download](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (18.2 MB)
+- *Dark Angel* (v.1.0.0): [Download](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (17.6 MB)
 
 ## Building :hammer:
 
@@ -52,6 +52,18 @@ $ flutter build apk
 ```
 
 You have now generated a release build of *Black Unicorn Wallpapers*.
+
+## Extending the supported languages :book:
+
+*Black Unicorn Wallpapers* is localized for only English. To add a language, simply create a filed called `app_languagecode.arb` in `lib/l10n` where `languagecode` represents the language code for the language you want to add. If it were Spanish for example, you would create a file called `app_es.arb`.
+Copy and past the contents from one of the other `*.arb` files and edit the strings accordingly.
+Finally, add this line in the list `supportedLocales` in the file `lib/main.dart`.
+
+```dart
+const Locale('languagecode', ''),
+```
+
+`languagecode` represents the language you are translating for.
 
 ## Changelog :black_nib:
 
