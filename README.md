@@ -23,12 +23,14 @@ boring very unsexy wallpapers.
 
 ## Download :inbox_tray:
 
-- *Dark Angel* (v.1.0.0): [Download](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (17.6 MB)
-- *Elegance Noir* (v.1.1.0): [Download](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.1.0/Buwa-v1.1.0-EleganceNoir-Release.apk) (17.6 MB)
+- *Dark Angel* (v.1.0.0): 
+  - [Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (17.6 MB)
+- *Elegance Noir* (v.1.1.0): 
+  - [Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.1.0/Buwa-v1.1.0-EleganceNoir-Release.apk) (17.6 MB)
 
 ## Building :hammer:
 
-Make sure that you have the following programs installed:
+Make sure that you have the following programmes installed:
 
 - Flutter SDK
 - Dart SDK
@@ -42,10 +44,10 @@ Make sure that you have the following programs installed:
 After you have installed these, run this command to generate a keystore for the app.
 
 ```bash
-keytool -genkey -v -keystore key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
+$ keytool -genkey -v -keystore key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias key
 ```
 
-After having done that, move the keystore to `android/app` and fill in the fields for the keystore password in the file `android/app/key.properties`.
+After having done that, move the Java keystore to `android/app` and fill in the fields for the keystore password in the file `android/app/key.properties`.
 
 Finally, run these commands:
 
@@ -85,5 +87,5 @@ const Locale('languagecode', ''),
 
 ## Note :scroll:
 
-- *Black Unicorn Wallpapers* :black_heart: by Alexander Abraham :black_heart: a.k.a. *"The Black Unicorn"* :unicorn:
-- licensed under the MIT license.
+- *Black Unicorn Wallpapers :black_heart:* by Alexander Abraham :black_heart: a.k.a. *"The Black Unicorn" :unicorn:*
+- Licensed under the MIT license.
