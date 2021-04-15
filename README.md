@@ -23,10 +23,8 @@ boring very unsexy wallpapers.
 
 ## Download :inbox_tray:
 
-- *Dark Angel* (v.1.0.0): 
+- *Dark Angel* (v.1.0.0):
   - [Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (17.6 MB)
-- *Elegance Noir* (v.1.1.0): 
-  - [Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.1.0/Buwa-v1.1.0-EleganceNoir-Release.apk) (17.6 MB)
 
 ## Building :hammer:
 
