@@ -26,6 +26,10 @@ boring very unsexy wallpapers.
 - *Dark Angel* (v.1.0.0):
   - [Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (17.7 MB)
 
+## Google Play :robot:
+
+[![Get it on Google Play!](https://blckunicorn.art/assets/images/static/GooglePlayDownload.png)](https://play.google.com/store/apps/details?id=com.blackunicorn.buwa)
+
 ## Building :hammer:
 
 Make sure that you have the following programmes installed:
