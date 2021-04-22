@@ -7,7 +7,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
   wallpaper_manager: ^1.0.10
   flutter_cache_manager: ^3.0.1
   loading_animations: ^2.2.0
