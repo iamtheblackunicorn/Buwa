@@ -2,7 +2,6 @@
  <img src="https://github.com/iamtheblackunicorn/Buwa/raw/main/assets/images/banner.png"/>
 </p>
 
-
 # BLACK UNICORN WALLPAPERS :black_heart:
 
 *Sexy and beautiful wallpapers for your Android-powered device!* :black_heart:
