@@ -25,6 +25,8 @@ boring very unsexy wallpapers.
 
 - *Dark Angel* (v.1.0.0):
   - [Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (17.7 MB)
+- *Winged Lady* (v.1.1.0):
+  - [Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.1.0/Buwa-v1.1.0-WingedLady-Release.apk) (17.7 MB)
 
 ## Google Play :robot:
 
@@ -74,18 +76,16 @@ const Locale('languagecode', ''),
 
 ## Changelog :black_nib:
 
-### Version 1.0.0: Initial Release:
+### Version 1.0.0: ***Dark Angel***
 
 - upload to GitHub
 - initial release
 - speed and elegance
 
-### Version 1.1.0: The Elegance Update:
+### Version 1.1.0: ***Winged Lady***
 
-- added an image title to each wallpaper
-- localized the app for Spanish, English, and German
-- fixed typos
-- improved layout
+- performance improvements
+- layout fixes for different device sizes
 
 ## Note :scroll:
 
