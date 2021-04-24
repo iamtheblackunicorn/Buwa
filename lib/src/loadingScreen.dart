@@ -1,3 +1,6 @@
+// Black Unicorn Wallpapers by Alexander Abraham, The Black Unicorn.
+// Licensed under the MIT license.
+
 import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animations/loading_animations.dart';

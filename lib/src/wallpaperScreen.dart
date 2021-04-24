@@ -1,3 +1,7 @@
+// Black Unicorn Wallpapers by Alexander Abraham, The Black Unicorn.
+// Licensed under the MIT license.
+
+import 'info.dart';
 import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpaper_manager/wallpaper_manager.dart';
@@ -9,10 +13,16 @@ class WallPaperScreen extends StatefulWidget{
   final String imageUrl;
   final String imageNumber;
   final String imageTitle;
-  WallPaperScreen({Key key,
+  final String imageAuthor;
+  final String imageAuthorPicture;
+  WallPaperScreen({
+    Key key,
     @required this.imageUrl,
     @required this.imageNumber,
-    @required this.imageTitle})
+    @required this.imageTitle,
+    @required this.imageAuthor,
+    @required this.imageAuthorPicture
+  })
   : super(key: key);
   @override
   WallPaperScreenState createState() => WallPaperScreenState();
@@ -20,72 +30,51 @@ class WallPaperScreen extends StatefulWidget{
 class WallPaperScreenState extends State<WallPaperScreen>{
   String pictureUrl;
   String pictureNumber;
-  String isSet;
   String pictureTitle;
-  String isInstalled;
+  String author;
+  String authorPicture;
+  bool isInstalled;
+  String isInstalling;
+  @override
   void initState(){
     super.initState();
     pictureUrl = widget.imageUrl;
     pictureNumber = widget.imageNumber;
     pictureTitle = widget.imageTitle;
-    isSet = setWallpaperMessage;
-    isInstalled = notInstalledMessage;
+    authorPicture = widget.imageAuthorPicture;
+    author = widget.imageAuthor;
+    isInstalled = false;
+    isInstalling = isInstallingDefault;
   }
   @override
   Widget build(BuildContext context){
     String wallpaperMessage = AppLocalizations.of(context).wallpaperLabel;
     String setMessage = AppLocalizations.of(context).isSetLabel;
     String waitMessage = AppLocalizations.of(context).waitLabel;
-    String doneMessage = AppLocalizations.of(context).doneLabel;
+    String useMessage = AppLocalizations.of(context).useLabel;
+    String infoMessage = AppLocalizations.of(context).infoLabel;
     return Scaffold(
-      appBar: new AppBar(
-        centerTitle: true,
-        title: new Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            new Padding(
-              padding: EdgeInsets.all(stdPadding),
-              child:new Text(
-                '$wallpaperMessage $pictureNumber',
-                style: TextStyle(
-                  color: accentColor,
-                  fontSize: textFontSize,
-                  fontFamily: defaultFont
-                ),
-              ),
-            )
-          ]
-        ),
-        elevation: stdElevation,
-        backgroundColor: mainColor,
-      ),
       backgroundColor: mainColor,
-      body: new SingleChildScrollView(
-        child: new Center(
-          child: new Column(
+      body: new Stack(
+        children: <Widget>[
+          new Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new NetworkImage(
+                  pictureUrl,
+                ),
+                fit: BoxFit.cover,
+              )
+            )
+          ),
+          new Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget> [
-              new SizedBox(
-                height: specialSpacing
-              ),
-              new Padding(
-                padding: EdgeInsets.all(specialPadding),
-                child: new SizedBox(
-                  height: pictureBoxHeight,
-                  width: pictureBoxWidth,
-                  child: new ClipRRect(
-                    borderRadius: BorderRadius.circular(stdRounding),
-                    child: Image.network(
-                      '$pictureUrl',
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
-                  )
-                )
-              ),
               new Padding(
                 padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-                child:new Card(
-                  color: accentColor,
+                child: new Card(
+                  color: mainColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(specialRounding)
                   ),
@@ -93,13 +82,16 @@ class WallPaperScreenState extends State<WallPaperScreen>{
                     padding: EdgeInsets.all(stdPadding),
                     child: new Column(
                       children: <Widget> [
-                        new Text(
-                          '$pictureTitle',
-                          textAlign: TextAlign.left,
-                          style: new TextStyle(
-                            color: mainColor,
-                            fontSize: textFontSize,
-                            fontFamily: defaultFont
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child: new Text(
+                            '$pictureTitle',
+                            textAlign: TextAlign.left,
+                            style: new TextStyle(
+                              color: accentColor,
+                              fontSize: infoPadding,
+                              fontFamily: defaultFont
+                            )
                           )
                         ),
                         new Padding(
@@ -107,68 +99,88 @@ class WallPaperScreenState extends State<WallPaperScreen>{
                           child: new Divider(
                             height: dividerHeight,
                             thickness: dividerHeight,
-                            color: mainColor
+                            color: accentColor
                           )
                         ),
-                        new Text(
-                          '$isInstalled',
-                          textAlign: TextAlign.left,
-                          style: new TextStyle(
-                            color: mainColor,
-                            fontSize: textFontSize,
-                            fontFamily: defaultFont
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child: new Text(
+                            '$isInstalling',
+                            textAlign: TextAlign.left,
+                            style: new TextStyle(
+                              color: accentColor,
+                              fontSize: infoPadding,
+                              fontFamily: defaultFont
+                            )
                           )
-                        )
+                        ),
                       ]
                     )
                   )
                 )
               ),
               new SizedBox(
-                height: boxSpacing
+                height: specialBoxSpacing
               ),
-              new ElevatedButton(
-                child: Text(
-                  '$isSet'
-                ),
-                onPressed: () async {
-                  setState((){
-                    isInstalled = '$waitMessage';
-                  });
-                  String url = '$pictureUrl';
-                  int homeLocation = WallpaperManager.HOME_SCREEN;
-                  int lockLocation = WallpaperManager.LOCK_SCREEN;
-                  String resultOne;
-                  String resultTwo;
-                  var file = await DefaultCacheManager().getSingleFile(url);
-                  resultOne = await WallpaperManager.setWallpaperFromFile(file.path, homeLocation);
-                  resultTwo = await WallpaperManager.setWallpaperFromFile(file.path, lockLocation);
-                  setState((){
-                    isSet = '$setMessage';
-                  });
-                  setState((){
-                    isInstalled = '$doneMessage';
-                  });
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(stdRounding)
-                  ),
-                  primary: accentColor,
-                  padding: EdgeInsets.symmetric(vertical: verticalPadding, horizontal: horizontalPadding),
-                  textStyle: TextStyle(
-                    fontSize: textFontSize,
-                    color: mainColor,
-                    fontFamily: defaultFont
-                  )
-                ),
-              ),
-              new SizedBox(
-                height: boxSpacing
-              )
             ]
+          ),
+          Positioned(
+            child: AppBar(
+              title: Text(
+                '$wallpaperMessage $pictureNumber',
+                style: TextStyle(
+                  color: mainColor,
+                  fontSize: textFontSize,
+                  fontFamily: defaultFont
+                ),
+              ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              actions: <Widget>[
+                IconButton(
+                  icon: isInstalled?new Icon(Icons.cloud_done): new Icon(Icons.cloud_download),
+                  onPressed: () async {
+                    if (isInstalled == true) {
+                      setState((){
+                        isInstalled = false;
+                      });
+                    }
+                    else {
+                      setState((){
+                        isInstalling = '$waitMessage';
+                      });
+                      String url = '$pictureUrl';
+                      int homeLocation = WallpaperManager.HOME_SCREEN;
+                      int lockLocation = WallpaperManager.LOCK_SCREEN;
+                      String resultOne;
+                      String resultTwo;
+                      var file = await DefaultCacheManager().getSingleFile(url);
+                      resultOne = await WallpaperManager.setWallpaperFromFile(file.path, homeLocation);
+                      resultTwo = await WallpaperManager.setWallpaperFromFile(file.path, lockLocation);
+                      setState((){
+                        isInstalled = true;
+                      });
+                      setState((){
+                        isInstalling = '$setMessage';
+                      });
+                    }
+                  },
+                  tooltip: '$useMessage',
+                ),
+                IconButton(
+                  icon: Icon(Icons.info),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (_) => Info()
+                    );
+                  },
+                  tooltip: '$infoMessage'
+                ),
+              ],
+            ),
           )
-        )
+        ]
       )
     );
   }

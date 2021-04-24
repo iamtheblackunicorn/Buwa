@@ -22,10 +22,12 @@ boring very unsexy wallpapers.
 
 ## Download :inbox_tray:
 
-- *Dark Angel* (v.1.0.0):
+- ***Dark Angel*** (v.1.0.0):
   - ***[Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.0.0/Buwa-v1.0.0-DarkAngel-Release.apk) (17.7 MB)***
-- *Winged Lady* (v.1.1.0):
+- ***Winged Lady*** (v.1.1.0):
   - ***[Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.1.0/Buwa-v1.1.0-WingedLady-Release.apk) (17.6 MB)***
+- ***Pegasus*** (v.1.2.0):
+  - ***[Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.2.0/Buwa-v1.2.0-Pegasus-Release.apk) (17.6 MB)***
 
 ## Google Play :robot:
 
@@ -85,6 +87,12 @@ const Locale('languagecode', ''),
 
 - performance improvements
 - layout fixes for different device sizes
+
+### Version 1.2.0: ***Pegasus***
+
+- major visual overhaul
+- complete rebranding
+- major performance improvements
 
 ## Note :scroll:
 

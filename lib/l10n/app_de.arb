@@ -4,5 +4,10 @@
   "loadingLabel": "Lade...",
   "wallpaperLabel": "Hintergrund",
   "waitLabel": "Warte, bitte!",
-  "doneLabel": "Fertig."
+  "useLabel": "Anwenden",
+  "infoLabel": "Info",
+  "licenseLabel": "Lizenz",
+  "licensedLabel": "Lizenziert unter der",
+  "byLabel": "von",
+  "underLabel": "Verstanden"
 }

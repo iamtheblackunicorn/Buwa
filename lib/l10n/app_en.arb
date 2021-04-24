@@ -4,5 +4,10 @@
   "loadingLabel": "Loading...",
   "wallpaperLabel": "Wallpaper",
   "waitLabel": "Please wait...",
-  "doneLabel": "Done."
+  "useLabel": "Use",
+  "infoLabel": "Info",
+  "licenseLabel": "license",
+  "licensedLabel": "Licensed under the",
+  "byLabel": "by",
+  "underLabel": "Got it"
 }

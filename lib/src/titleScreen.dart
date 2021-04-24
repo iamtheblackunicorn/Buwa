@@ -1,3 +1,6 @@
+// Black Unicorn Wallpapers by Alexander Abraham, The Black Unicorn.
+// Licensed under the MIT license.
+
 import 'dataHandler.dart';
 import 'errorScreen.dart';
 import 'loadingScreen.dart';
@@ -36,7 +39,17 @@ class HomeState extends State<Home> {
               String key = remoteWallpapers.keys.elementAt(i);
               String url = remoteWallpapers[key][0];
               String title = remoteWallpapers[key][1];
-              screens.add(WallPaperScreen(imageUrl: url, imageNumber: key, imageTitle: title));
+              String author = remoteWallpapers[key][2];
+              String authorPic = remoteWallpapers[key][3];
+              screens.add(
+                WallPaperScreen(
+                  imageUrl: url,
+                  imageNumber: key,
+                  imageTitle: title,
+                  imageAuthor: author,
+                  imageAuthorPicture: authorPic
+                )
+              );
             }
             return PageView(
               controller: pageController,
