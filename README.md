@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://github.com/iamtheblackunicorn/Buwa/raw/main/assets/images/banner.png"/>
+ <img src="https://github.com/iamtheblackunicorn/Buwa/raw/main/assets/images/buwaBanner.png"/>
 </p>
 
 # BLACK UNICORN WALLPAPERS :black_heart:
