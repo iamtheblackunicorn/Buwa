@@ -1,7 +1,6 @@
 // Black Unicorn Wallpapers by Alexander Abraham, The Black Unicorn.
 // Licensed under the MIT license.
 
-import 'info.dart';
 import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpaper_manager/wallpaper_manager.dart';
@@ -11,17 +10,11 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 class WallPaperScreen extends StatefulWidget{
   final String imageUrl;
-  final String imageNumber;
   final String imageTitle;
-  final String imageAuthor;
-  final String imageAuthorPicture;
   WallPaperScreen({
     Key key,
     @required this.imageUrl,
-    @required this.imageNumber,
     @required this.imageTitle,
-    @required this.imageAuthor,
-    @required this.imageAuthorPicture
   })
   : super(key: key);
   @override
@@ -29,26 +22,19 @@ class WallPaperScreen extends StatefulWidget{
 }
 class WallPaperScreenState extends State<WallPaperScreen>{
   String pictureUrl;
-  String pictureNumber;
   String pictureTitle;
-  String author;
-  String authorPicture;
   bool isInstalled;
   String isInstalling;
   @override
   void initState(){
     super.initState();
     pictureUrl = widget.imageUrl;
-    pictureNumber = widget.imageNumber;
     pictureTitle = widget.imageTitle;
-    authorPicture = widget.imageAuthorPicture;
-    author = widget.imageAuthor;
     isInstalled = false;
     isInstalling = isInstallingDefault;
   }
   @override
   Widget build(BuildContext context){
-    String wallpaperMessage = AppLocalizations.of(context).wallpaperLabel;
     String setMessage = AppLocalizations.of(context).isSetLabel;
     String waitMessage = AppLocalizations.of(context).waitLabel;
     String useMessage = AppLocalizations.of(context).useLabel;
@@ -127,7 +113,7 @@ class WallPaperScreenState extends State<WallPaperScreen>{
           Positioned(
             child: AppBar(
               title: Text(
-                '$wallpaperMessage $pictureNumber',
+                '$pictureTitle',
                 style: TextStyle(
                   color: mainColor,
                   fontSize: textFontSize,
@@ -135,7 +121,7 @@ class WallPaperScreenState extends State<WallPaperScreen>{
                 ),
               ),
               backgroundColor: Colors.transparent,
-              elevation: 0,
+              elevation: stdElevation,
               actions: <Widget>[
                 IconButton(
                   icon: isInstalled?new Icon(Icons.cloud_done): new Icon(Icons.cloud_download),
@@ -166,16 +152,6 @@ class WallPaperScreenState extends State<WallPaperScreen>{
                     }
                   },
                   tooltip: '$useMessage',
-                ),
-                IconButton(
-                  icon: Icon(Icons.info),
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (_) => Info()
-                    );
-                  },
-                  tooltip: '$infoMessage'
                 ),
               ],
             ),

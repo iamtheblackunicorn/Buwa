@@ -1,13 +1,15 @@
 {
   "isSetLabel": "Usado!",
   "errorLabel": "Error!",
-  "loadingLabel": "Cargando...",
-  "wallpaperLabel": "El telón numero ",
+  "loadingLabel": "Cargando!",
   "waitLabel": "Espera, por favor!",
   "useLabel": "Usar",
   "infoLabel": "Info",
-  "licenseLabel": "licencia",
-  "licensedLabel": "Licenciado bajo la",
-  "byLabel": "de",
-  "underLabel": "Entendido"
+  "licenseLabel": "Licencia",
+  "versionLabel": "Version",
+  "authorLabel": "Autor",
+  "exploreLabel": "Explorar",
+  "categoryLabel": "Categoria",
+  "itemLabel": "publicaciones",
+  "twitterLabel": "Twitter"
 }

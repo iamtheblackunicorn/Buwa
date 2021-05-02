@@ -9,65 +9,208 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 class Info extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    String byMessage = AppLocalizations.of(context).byLabel;
-    String licensedMessage = AppLocalizations.of(context).licensedLabel;
+    String infoMessage = AppLocalizations.of(context).infoLabel;
+    String versionMessage = AppLocalizations.of(context).versionLabel;
     String licenseMessage = AppLocalizations.of(context).licenseLabel;
-    String underMessage = AppLocalizations.of(context).underLabel;
-    return Padding(
-      padding: EdgeInsets.only(
-        top:topPadding,
-        right: sidePadding,
-        left:sidePadding,
-        bottom:bottomPadding
-      ),
-      child: new Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(infoRounding)
+    String authorMessage = AppLocalizations.of(context).authorLabel;
+    String twitterMessage = AppLocalizations.of(context).twitterLabel;
+    return Scaffold(
+      backgroundColor: mainColor,
+      appBar: new AppBar(
+        iconTheme: IconThemeData(
+          color: accentColor,
         ),
-        color: mainColor,
-        child: new Column(
-          children:<Widget> [
-            new Stack(
-              children: <Widget> [
-              new Image.network(
-                '$logoUrl',
-                height: infoPicSize,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            ]
-          ),
-          new Padding(
-            padding: EdgeInsets.all(infoPadding),
-            child: new Text(
-              '$appTitle v.$appVersion $byMessage\n$appAuthor, $appAuthorPseudo.\n$licensedMessage $appLicense $licenseMessage.',
-              style: new TextStyle(
-                color: accentColor,
-                fontFamily: defaultFont,
-                fontSize: infoPadding
-              )
-            )
-          ),
-          new RaisedButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(infoRounding)
-            ),
+        elevation: stdElevation,
+        backgroundColor: mainColor,
+        title: new Text(
+          '$infoMessage',
+          style: new TextStyle(
             color: accentColor,
-            padding: EdgeInsets.all(infoPadding),
-            child: new Text(
-              '$underMessage!',
-              style: new TextStyle(
-                fontSize: infoPadding,
-                fontFamily: defaultFont,
-                color: mainColor
+            fontSize: textFontSize,
+            fontFamily: defaultFont
+          )
+        )
+      ),
+      body: new SingleChildScrollView(
+        child: new Center(
+          child: new Column(
+            children: <Widget> [
+              new Padding(
+                padding: EdgeInsets.all(mySpecialPadding),
+                child:new SizedBox(
+                  width: logoDimensions,
+                  height: logoDimensions,
+                  child: new Image(
+                    image: AssetImage(
+                      '$logoPath'
+                    )
+                  )
+                ),
+              ),
+              new Padding(
+                padding: EdgeInsets.all(mySpecialPadding),
+                child: new SizedBox(
+                  width: boxWidth,
+                  height: boxHeight,
+                  child:new Card(
+                    color: accentColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(mySpecialRounding)
+                    ),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget> [
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child: new Text(
+                            '$versionMessage',
+                            style: new TextStyle(
+                              color: mainColor,
+                              fontSize: textFontSize,
+                              fontFamily: defaultFont
+                            )
+                          )
+                        ),
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child: new Text(
+                            '$appVersion',
+                            style: new TextStyle(
+                              color: mainColor,
+                              fontSize: textFontSize,
+                              fontFamily: defaultFont
+                            )
+                          )
+                        )
+                      ]
+                    )
+                  )
+                )
+              ),
+              new Padding(
+                padding: EdgeInsets.all(mySpecialPadding),
+                child: new SizedBox(
+                  width: boxWidth,
+                  height: boxHeight,
+                  child:new Card(
+                    color: accentColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(mySpecialRounding)
+                    ),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget> [
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child: new Text(
+                            '$authorMessage',
+                            style: new TextStyle(
+                              color: mainColor,
+                              fontSize: textFontSize,
+                              fontFamily: defaultFont
+                            )
+                          )
+                        ),
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child: new Text(
+                            '$appAuthor',
+                            style: new TextStyle(
+                              color: mainColor,
+                              fontSize: textFontSize,
+                              fontFamily: defaultFont
+                            )
+                          )
+                        )
+                      ]
+                    )
+                  )
+                )
+              ),
+              new Padding(
+                padding: EdgeInsets.all(mySpecialPadding),
+                child: new SizedBox(
+                  width: boxWidth,
+                  height: boxHeight,
+                  child:new Card(
+                    color: accentColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(mySpecialRounding)
+                    ),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget> [
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child:new Text(
+                            '$licenseMessage',
+                            style: new TextStyle(
+                              color: mainColor,
+                              fontSize: textFontSize,
+                              fontFamily: defaultFont
+                            )
+                          )
+                        ),
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child:new Text(
+                            '$appLicense',
+                            style: new TextStyle(
+                              color: mainColor,
+                              fontSize: textFontSize,
+                              fontFamily: defaultFont
+                            )
+                          )
+                        )
+                      ]
+                    )
+                  )
+                )
+              ),
+              new Padding(
+                padding: EdgeInsets.all(mySpecialPadding),
+                child: new SizedBox(
+                  width: boxWidth,
+                  height: boxHeight,
+                  child:new Card(
+                    color: accentColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(mySpecialRounding)
+                    ),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget> [
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child:new Text(
+                            '$twitterMessage',
+                            style: new TextStyle(
+                              color: mainColor,
+                              fontSize: textFontSize,
+                              fontFamily: defaultFont
+                            )
+                          )
+                        ),
+                        new Padding(
+                          padding: EdgeInsets.all(infoPadding),
+                          child:new Text(
+                            '$authorTwitterHandle',
+                            style: new TextStyle(
+                              color: mainColor,
+                              fontSize: textFontSize,
+                              fontFamily: defaultFont
+                            )
+                          )
+                        )
+                      ]
+                    )
+                  )
+                )
               )
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            }
-          ),
-        ]
+            ]
+          )
+        )
       )
-    ));
+    );
   }
 }

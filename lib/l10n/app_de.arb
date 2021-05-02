@@ -1,13 +1,15 @@
 {
   "isSetLabel": "Angewandt!",
   "errorLabel": "Fehler!",
-  "loadingLabel": "Lade...",
-  "wallpaperLabel": "Hintergrund",
+  "loadingLabel": "Lade!",
   "waitLabel": "Warte, bitte!",
   "useLabel": "Anwenden",
   "infoLabel": "Info",
   "licenseLabel": "Lizenz",
-  "licensedLabel": "Lizenziert unter der",
-  "byLabel": "von",
-  "underLabel": "Verstanden"
+  "versionLabel": "Version",
+  "authorLabel": "Autor",
+  "exploreLabel": "Erkunden",
+  "categoryLabel": "Kategorie",
+  "itemLabel": "Eintraege",
+  "twitterLabel": "Twitter"
 }

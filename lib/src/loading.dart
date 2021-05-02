@@ -7,7 +7,7 @@ import 'package:loading_animations/loading_animations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-class LoadingScreen extends StatelessWidget {
+class Loading extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     String loadingMessage = AppLocalizations.of(context).loadingLabel;
@@ -36,9 +36,12 @@ class LoadingScreen extends StatelessWidget {
             new SizedBox(
               height: animationSpacing
             ),
-            new LoadingBouncingGrid.square(
+            new LoadingBumpingLine.circle(
               size: animationSize,
               backgroundColor: accentColor,
+              duration: Duration(
+                milliseconds: loadingDuration
+              )
             )
           ]
         )

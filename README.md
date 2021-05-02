@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://github.com/iamtheblackunicorn/Buwa/raw/main/assets/images/buwaBanner.png"/>
+ <img src="https://github.com/iamtheblackunicorn/Buwa/raw/main/assets/images/banner.png"/>
 </p>
 
 # BLACK UNICORN WALLPAPERS :black_heart:
@@ -13,12 +13,13 @@ boring very unsexy wallpapers.
 
 ## Features :test_tube:
 
-- sexy and aesthetically-pleasing wallpapers
-- super fast performance
-- easy to use
-- new wallpapers are added every week
-- localized for German, English, and Spanish
-- elegant and minimalist design
+- Sexy and aesthetically-pleasing wallpapers!
+- Super fast performance!
+- Easy to use!
+- New wallpapers are added every week!
+- Localised for German, English, and Spanish
+- Elegant and minimalist design!
+- Choose from categories or explore all wallpapers!
 
 ## Download :inbox_tray:
 
@@ -28,6 +29,8 @@ boring very unsexy wallpapers.
   - ***[Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.1.0/Buwa-v1.1.0-WingedLady-Release.apk) (17.6 MB)***
 - ***Pegasus*** (v.1.2.0):
   - ***[Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.2.0/Buwa-v1.2.0-Pegasus-Release.apk) (17.6 MB)***
+- ***Maison Artistique*** (v.1.3.0):
+  - ***[Download for Android](https://github.com/iamtheblackunicorn/Buwa/releases/download/v.1.3.0/Buwa-v1.3.0-MaisonArtistique-Release.apk) (17.9 MB)***
 
 ## Google Play :robot:
 
@@ -93,6 +96,14 @@ const Locale('languagecode', ''),
 - major visual overhaul
 - complete rebranding
 - major performance improvements
+
+### Version 1.3.0: ***Maison Artistique***
+
+- Major layout and functionality overhaul.
+- This app is no longer a tool but a work of art and precision.
+- More intuitive design.
+- More elegant theme, font, and layout.
+- Users can now choose from multiple categories.
 
 ## Note :scroll:
 

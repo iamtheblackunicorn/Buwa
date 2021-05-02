@@ -1,16 +1,17 @@
 name: Buwa
 description: Sexy and beautiful wallpapers for your Android-powered device!
 publish_to: 'none'
-version: 1.2.0+3
+version: 1.3.0+4
 environment:
   sdk: ">=2.7.0 <3.0.0"
 dependencies:
   flutter:
     sdk: flutter
+  dio: ^4.0.0
+  termstyle: ^1.7.0
   wallpaper_manager: ^1.0.10
   flutter_cache_manager: ^3.0.1
   loading_animations: ^2.2.0
-  dio: ^4.0.0
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
@@ -20,7 +21,9 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - assets/images/logo.png
   fonts:
-    - family: Lobster
+    - family: ProductSansBold
       fonts:
-        - asset: assets/fonts/Lobster.ttf
+        - asset: assets/fonts/ProductSansBold.ttf

@@ -1,13 +1,15 @@
 {
   "isSetLabel": "Set!",
   "errorLabel": "Error!",
-  "loadingLabel": "Loading...",
-  "wallpaperLabel": "Wallpaper",
-  "waitLabel": "Please wait...",
+  "loadingLabel": "Loading!",
+  "waitLabel": "Please wait!",
   "useLabel": "Use",
   "infoLabel": "Info",
-  "licenseLabel": "license",
-  "licensedLabel": "Licensed under the",
-  "byLabel": "by",
-  "underLabel": "Got it"
+  "licenseLabel": "License",
+  "versionLabel": "Version",
+  "authorLabel": "Author",
+  "exploreLabel": "Explore",
+  "categoryLabel": "Category",
+  "itemLabel": "items",
+  "twitterLabel": "Twitter"
 }
