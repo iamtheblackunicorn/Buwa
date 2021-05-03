@@ -36,6 +36,11 @@ boring very unsexy wallpapers.
 
 [![Get it on Google Play!](https://blckunicorn.art/assets/images/static/GooglePlayDownload.png)](https://play.google.com/store/apps/details?id=com.blackunicorn.buwa)
 
+## YouTube :tv:
+
+You can watch the promotional video for Black Unicorn Wallpapers [here](https://youtu.be/GQMbwYf3gCs)!
+
+
 ## Building :hammer:
 
 Make sure that you have the following programmes installed:
