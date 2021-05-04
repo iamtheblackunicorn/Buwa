@@ -40,6 +40,10 @@ boring very unsexy wallpapers.
 
 You can watch the promotional video for Black Unicorn Wallpapers [here](https://youtu.be/GQMbwYf3gCs)!
 
+## Check it out on [itsAllWidgets](https://itsallwidgets.com/)
+
+Click [here](https://itsallwidgets.com/buwa-black-unicorn-wallpapers).
+
 
 ## Building :hammer:
 
